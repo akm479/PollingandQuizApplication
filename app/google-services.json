@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "319444404081",
+    "firebase_url": "https://pollingapp-b5468.firebaseio.com",
+    "project_id": "pollingapp-b5468",
+    "storage_bucket": "pollingapp-b5468.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319444404081:android:a8c575a431ff99aa",
+        "android_client_info": {
+          "package_name": "com.example.akshay.PollingApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319444404081-oie3lq9p5u8fb96ap7e70cv77gjc7t2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.akshay.PollingApp",
+            "certificate_hash": "2ac84d837b44a06ae845a778dd83412dacca9237"
+          }
+        },
+        {
+          "client_id": "319444404081-utlh6to1dhvpv4ag2bofmp8364po64t6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACw-xaqX5bycC4W-GwaXQ4E9_9MK7UbfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319444404081-utlh6to1dhvpv4ag2bofmp8364po64t6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319444404081:android:90f331efbb44869e",
+        "android_client_info": {
+          "package_name": "com.example.akshay.tabbedactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319444404081-m5ts7dqs5a4bfon6mlh1prv28dni1ojn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.akshay.tabbedactivity",
+            "certificate_hash": "2ac84d837b44a06ae845a778dd83412dacca9237"
+          }
+        },
+        {
+          "client_id": "319444404081-utlh6to1dhvpv4ag2bofmp8364po64t6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACw-xaqX5bycC4W-GwaXQ4E9_9MK7UbfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319444404081-utlh6to1dhvpv4ag2bofmp8364po64t6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

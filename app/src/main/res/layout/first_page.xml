@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.akshay.PollingApp.connections_activity"
+    android:id="@+id/first_page_container">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintVertical_bias="0.4"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/stat_sys_upload"
+        android:backgroundTint="@color/pink"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/participate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintVertical_bias="0.4"
+        android:clickable="true"
+        android:backgroundTint="@color/pink"
+        app:srcCompat="@android:drawable/stat_sys_download" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/start_quiz_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintVertical_bias="0.6"
+        android:clickable="true"
+        android:backgroundTint="@color/pink"
+        app:srcCompat="@android:drawable/stat_sys_upload" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/participate_quiz_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintVertical_bias="0.6"
+        android:clickable="true"
+        android:backgroundTint="@color/pink"
+        app:srcCompat="@android:drawable/stat_sys_download" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/start_button"
+        app:layout_constraintRight_toRightOf="@+id/start_button"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"
+        android:layout_marginTop="5dp"
+        android:text="Start a Poll" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/participate_button"
+        app:layout_constraintRight_toRightOf="@+id/participate_button"
+        app:layout_constraintTop_toBottomOf="@+id/participate_button"
+        android:layout_marginTop="5dp"
+        android:text="Participate in Poll" />
+
+    <TextView
+        android:id="@+id/textView2_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/start_quiz_button"
+        app:layout_constraintRight_toRightOf="@+id/start_quiz_button"
+        app:layout_constraintTop_toBottomOf="@+id/start_quiz_button"
+        android:layout_marginTop="5dp"
+        android:text="Start a Quiz" />
+
+    <TextView
+        android:id="@+id/textView3_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/participate_quiz_button"
+        app:layout_constraintRight_toRightOf="@+id/participate_quiz_button"
+        app:layout_constraintTop_toBottomOf="@+id/participate_quiz_button"
+        android:layout_marginTop="5dp"
+        android:text="Participate in Quiz" />
+
+    <View
+        android:id="@+id/mid_divider"
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:background="@color/common_google_signin_btn_text_light_disabled"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Discovering Nearby Devices..."
+        android:visibility="gone"
+        android:id="@+id/disc_text"/>
+
+</android.support.constraint.ConstraintLayout>

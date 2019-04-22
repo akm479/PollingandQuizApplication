@@ -74,12 +74,19 @@ public class PollListAdapter extends RecyclerView.Adapter<PollListAdapter.MyView
         String posted = "Posted: "+poll.getTimestamp().substring(0,4)+"-"+poll.getTimestamp().substring(4,6)+"-"+
         poll.getTimestamp().substring(6,8)+" "+
                 poll.getTimestamp().substring(8,10)+":"+poll.getTimestamp().substring(10,12);
-        final String expire = "Expires: "+poll.getExpiryDate().substring(0,4)+"-"+ poll.getExpiryDate().substring(4,6)+"-"+
+        final String expire;
+        if(poll.getExpiryDate().length()<12){
+            expire = posted;
+        }
+
+        else{
+         expire = "Expires: "+poll.getExpiryDate().substring(0,4)+"-"+ poll.getExpiryDate().substring(4,6)+"-"+
                 poll.getExpiryDate().substring(6,8)+
                 " "+
 
-               poll.getExpiryDate().substring(8,10)+":"+poll.getExpiryDate().substring(10,12);
+               poll.getExpiryDate().substring(8,10)+":"+poll.getExpiryDate().substring(10,12);}
         holder.askedtime.setText(posted);
+
         holder.expirytime.setText(expire);
         final int index = i;
         holder.avatar.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +136,7 @@ public class PollListAdapter extends RecyclerView.Adapter<PollListAdapter.MyView
                                                     groupobj.getListofpolls().get(it).getResponses().put(LoginActivity.returnemail(), finalAnsswerString);
                                                     GroupDB groupnew  = new GroupDB(groupobj.getGid(),groupobj.getUserlist(),groupobj.getListofpolls());
                                                     dbrefergroup.child(groupobj.getGid()).setValue(groupnew);
+                                                Toast.makeText(getContext(), "Submitted", Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     }

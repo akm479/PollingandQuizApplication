@@ -58,39 +58,41 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.MyVi
                  dbreferuser.addListenerForSingleValueEvent(new ValueEventListener() {
                      @Override
                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                         for(DataSnapshot i : dataSnapshot.getChildren()){
+                         for(DataSnapshot i : dataSnapshot.getChildren()) {
                              UserDB userobj = i.getValue(UserDB.class);
                              ArrayList<String> listofgroups = new ArrayList<>();
                              listofgroups = userobj.getListofgroups();
-                             ArrayList<String>locallist = new ArrayList<>();
-                             for(int it=0;it<listofgroups.size();it++){
-                                 if(!listofgroups.get(it).equals(group.getGroupname())){
-                                     locallist.add(listofgroups.get(it));
+                             ArrayList<String> locallist = new ArrayList<>();
+                             if (userobj.getUsername().equals(LoginActivity.returnemail())) {
+                                 for (int it = 0; it < listofgroups.size(); it++) {
+                                     if (!listofgroups.get(it).equals(group.getGroupname())) {
+                                         locallist.add(listofgroups.get(it));
+                                     }
+
                                  }
 
-                             }
-                             UserDB userdb = new UserDB(LoginActivity.returnemail(),locallist,userobj.getPassword(),userobj.getPassword());
+                             Log.d("meratera", "onDataChange: " + "before" + locallist);
+                             UserDB userdb = new UserDB(LoginActivity.returnemail(), locallist, userobj.getPassword(), userobj.getPassword());
                              dbreferuser.child(LoginActivity.returnemail()).setValue(userdb);
-
+                             Log.d("meratera", "onDataChange: " + "after" + locallist);
                              dbrefergroup.addListenerForSingleValueEvent(new ValueEventListener() {
                                  @Override
                                  public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                     for(DataSnapshot i : dataSnapshot.getChildren()){
-                                         GroupDB groupobj =  i.getValue(GroupDB.class);
-                                         if(group.getGroupname().equals(groupobj.getGid())){
+                                     for (DataSnapshot i : dataSnapshot.getChildren()) {
+                                         GroupDB groupobj = i.getValue(GroupDB.class);
+                                         if (group.getGroupname().equals(groupobj.getGid())) {
 
 
-
-
-                                                 ArrayList<String> locallist = new ArrayList<>();
-                                                 for (int it = 0; it < groupobj.getUserlist().size(); it++) {
-                                                     if (!groupobj.getUserlist().get(it).equals(LoginActivity.returnemail())) {
-                                                         locallist.add(groupobj.getUserlist().get(it));
-                                                     }
+                                             ArrayList<String> locallist = new ArrayList<>();
+                                             for (int it = 0; it < groupobj.getUserlist().size(); it++) {
+                                                 if (!groupobj.getUserlist().get(it).equals(LoginActivity.returnemail())) {
+                                                     locallist.add(groupobj.getUserlist().get(it));
                                                  }
-                                                 GroupDB groupdb = new GroupDB(groupobj.getGid(), locallist, groupobj.getListofpolls());
-                                                 dbrefergroup.child(groupobj.getGid()).setValue(groupdb);
-
+                                             }
+                                             Log.d("meratera", "onDataChange: 123" + locallist);
+                                             GroupDB groupdb = new GroupDB(groupobj.getGid(), locallist, groupobj.getListofpolls());
+                                             dbrefergroup.child(groupobj.getGid()).setValue(groupdb);
+                                             break;
                                          }
                                      }
                                  }
@@ -101,7 +103,7 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.MyVi
                                  }
                              });
 
-
+                         }
 
                          }
                      }

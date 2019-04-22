@@ -77,7 +77,7 @@ public class Tab2Send extends Fragment {
 
                 if(hour+hour_asked+(minute+minute_asked)/60>24){
                     newhour = hour+hour_asked+(minute+minute_asked)/60-24;
-
+                    Log.d("dsdds", "onClick: "+Integer.toString(newhour));
                     newminute = (minute+minute_asked)%60;
                     Calendar c = Calendar.getInstance();
                     c.add(Calendar.DATE, 1);

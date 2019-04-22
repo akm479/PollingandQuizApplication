@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.LocaleList;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -84,6 +85,8 @@ public class LoginActivity extends AppCompatActivity   {
     static  String Localuser="";
     String pwd;
     static  String rollno;
+    FloatingActionButton continu1;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,21 +96,30 @@ public class LoginActivity extends AppCompatActivity   {
         password = findViewById(R.id.editText2);
         login = findViewById(R.id.button);
         signup = findViewById(R.id.button2);
+        continu1 = findViewById(R.id.continue1);
       settings  = getSharedPreferences(LoginActivity.MyPREFERENCES, 0);
         dbreferuser = FirebaseDatabase.getInstance().getReference("User");
 //Get "hasLoggedIn" value. If the value doesn't exist yet false is returned
-        boolean hasLoggedIn = settings.getBoolean("hasLoggedIn", false);
+        final boolean hasLoggedIn = settings.getBoolean("hasLoggedIn", false);
 
-        if(hasLoggedIn)
-        {
-            Intent i  = new Intent(getApplicationContext(),SplitActivity.class);
 
-            Localuser = settings.getString("email","");
-            rollno = settings.getString("rollno","");
-            startActivity(i);
-            finish();
-            //Go directly to main activity.
-        }
+       continu1.setOnClickListener(new OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               if(hasLoggedIn)
+               {
+                   Intent i  = new Intent(getApplicationContext(),SplitActivity.class);
+
+                   Localuser = settings.getString("email","");
+                   rollno = settings.getString("rollno","");
+                   startActivity(i);
+                   finish();
+                   //Go directly to main activity.
+               }
+           }
+       });
+
+
 
 
 
